@@ -1,0 +1,7 @@
+.outletDiv {
+  margin: auto;
+  border: 1px solid white;
+  width: min(500px, 90%);
+  height: 600px;
+  text-align: center;
+}

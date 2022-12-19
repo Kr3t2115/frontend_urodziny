@@ -1,0 +1,16 @@
+.navigation {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.navigation a {
+  color: #fff;
+}
+
+.navigation a:hover {
+  color: yellowgreen;
+}
