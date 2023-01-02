@@ -1,7 +1,21 @@
-.outletDiv {
-  margin: auto;
-  border: 1px solid white;
-  width: min(500px, 90%);
-  height: 600px;
-  text-align: center;
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  width: 320px;
+  height: 568px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.outlet {
+  width: 100%;
 }

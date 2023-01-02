@@ -1,35 +1,52 @@
-import TextField from "@mui/material/TextField";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import DatePicker from "react-date-picker";
+import "./AddPerson.css";
 
 export default function AddPerson() {
-  const [value, setValue] = useState(null);
+  const [values, setValues] = useState({
+    name: "",
+    date: new Date(),
+  });
+
+  useEffect(() => {
+    console.log(values);
+  }, [values]);
 
   return (
-    <div>
-      <h4>If you want add your friends complete the form</h4>
+    <div className="formDiv">
+      <h4>
+        Jeśli chcesz dodać swojego znajomego do listy która przypomni ci o jego
+        urodzinach wypełnij poniższy formularz
+      </h4>
 
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <MobileDatePicker
-          label="Your friend's date of birth"
-          value={value}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
-      </LocalizationProvider>
+      <input
+        type="text"
+        onChange={(e) => {
+          setValues({
+            ...values,
+            name: e.target.value,
+          });
+        }}
+        value={values.name}
+      ></input>
 
-      <br></br>
+      <DatePicker
+        onChange={(e) => {
+          // const date = new Date(e);
 
-      <br></br>
+          // const newDate =
+          //   date.getFullYear() +
+          //   "-" +
+          //   (date.getMonth() + 1) +
+          //   "-" +
+          //   date.getDate();
 
-      <TextField
-        id="filled-basic"
-        label="Write your friend`s name"
-        variant="filled"
+          setValues({
+            ...values,
+            date: e,
+          });
+        }}
+        value={values.date}
       />
     </div>
   );

@@ -1,3 +1,5 @@
+import "./viewPerson.css";
+
 export default function ViewPerson() {
   return (
     <div>
